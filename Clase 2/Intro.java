@@ -165,6 +165,9 @@ public class Intro {
         saludo();
         saludo();
 
+        // llamado del metodo con sobrecarga
+        saludo("Pachoneitor");
+
 
 
     }
@@ -180,6 +183,12 @@ public class Intro {
         */
         public static void saludo() {
             System.out.println("Hola Mundo!");
+        }
+
+        // SOBRECARGA DE METODOS
+        // Para que haya sobrecarga de metodos, el metodo debe recibir diferentes argumentos
+        public static void saludo(String nombre) {
+            System.out.println("Hola " + nombre);
         }
 
 
