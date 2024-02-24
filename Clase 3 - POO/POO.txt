@@ -1,0 +1,231 @@
+PROGRAMACION ORIENTADA A OBJETOS: Paradigma de programacion
+
+- Un objeto es una instacia de una clase 
+- Un objeto es cualquier cosa de la que podamos emitir un concepto
+
+- Identidad -> Clase o Entidad
+- Comportamiento -> Metodos o Servicios
+- Estado -> Atributos
+
+
+CLASE: 
+- Modelo o plantilla que se utiliza para crear objetos
+- Una clase define el estado de comportamiento que tendran en comun los objetos creados a partir de ella (Atributos, Metodos)
+
+
+CARACTERISTICAS MEDULARES DE LA POO:
+
+- ABSTRACCION (Pensar en que lo complejo alguna vez fue simple)
+* Ideas simpleas, puras de un concepto
+* Omitir detalles, extraer lo mas esencial
+* Concentrarnos en el QUE?, no en el COMO?
+
+-ENCAPSULAMIENTO: (public, private, protected)
+* Se refiere al ocultamiento del estado de un objeto.
+* Es la proteccion de los datos, para que no sean visibles o modificables por entidades no permitidas a hacerlo.
+* Permitir al acceso o modificaciones unicamente por medio de las operaciones destinadas para ello.
+
+- HERENCIA:
+* Reutilizacion de caracteristicas y comportamiento de un objeto en otro, en base a una relacion jerarquica, permitiendo extensibilidad.
+* Permite ahorrar codigo y esfuerzo.
+* Permite definir bases sobre las cuales extender modelos.
+
+- PRINCIPIOS DE HERENCIA:
+* Generalizacion
+"Animal" es una generalizacion de un "Ave". Toda "Ave" es un animal. Un "animal" puede no sr un "Ave".
+*Especializacion:
+*"Martillo", como especializacion de "Herramienta".
+
+-POLIMORFISMO: (Muchas formas)
+* Es la capacidad de un objeto de tomar difeentes formas.
+* Esto permite a un miusmo objeto comportarse de diferente manera, dependiento de la forma que haya tomado.
+
+LA POO PERMITE...
+* Modularidad.
+* Reusabilidad.
+* Alta Cohesion.
+* Bajo acoplamiento.
+
+- MODULARIDAD:
+* Trabajar por partes
+* Al hacerlo, subdividimos una aplicacion en partes mas pequeñas, independientes y manejables.
+* Reducimos complejidad.
+* Al crear modulos, solo pequeñas partes son afectadas cuando un cambio es realizado.
+
+- REUSABILIDAD: 
+* Identificar partes de un sistema que varias entidades utilizan en comun. Diseñarlas independientemente.
+* Diseñarlas pensando en que puedas ser utilizadas desde diferentes puntos del sistema.
+* No reinventar la rrueda constantemente. NIH
+(DRY - Don't Repeat Yourself)
+
+- ALTA COHESION:
+* Caracteristica del software que determina que tan estrechamente relacionados estan los elementos dentro de un componente (objeto),
+  con respecto a su definicion.
+* Que tan coherentes son los tributos y metiodos con el objeto mismo.
+
+- BAJO ACOPLAMIENTO:
+* Caracteristica del software que determina el grado de independencia entre los componentes con respecto a otros.
+* Que tanta afectacion tiene un cambio en un componente con respecto a los demas.
+* Que tanta afectacion tiene un cambio en los demas hacia el componente.
+* Bajo acoplamiento aumenta mantenibilidad.
+
+
+- CODE CONVENTIONS:
+- Clases e interfaces:
+* La primera letra debe ser mayuscula.
+* Si el nombre se ocmpone de varias palabras, se utilizara CamlCase.
+
+- Clases
+* Deben ser sustantivos.
+* Perro, Gato, Avion.
+
+- Interfaces:
+* Usualmente son adjetivos, tambien se usan para definir contratos o nuevos tipos.
+* Runnable, Serializable, Draggable.
+
+- Metodos
+* Primera Letra debe ser minuscula.
+* Notacion CamelCase
+* Combinacion de verbo infinitivo y sustantivo (getBalance(), generarRepoorte())
+
+-Variables:
+* Comienzan con mayusculas.
+* Notacion CamlCase.
+* Se recomiendan niombres descriptivos, que expresen el significado del valor.
+
+- Constantes:
+* Se crean marcando variables como final y static.
+* Mayusculas (Sin CamlCase).
+* Si es compuesta de varias palabhras, se separan con guion bajo(_).
+	MAX_WIDTH, MIN_WIDTH
+
+- Properties:
+* Si no es de tipo boolean, metodos de acceso deben ser "get" y "set".
+* getNombre() es un metodo valido para una propiedad Nombre, aunquue esta no exista. El nombre de la property es inferido del metodo getNomber().
+* Es igual para setnombre().
+* En caso de que tipo boolean, metodos de acceso deben ser is.
+
+
+MODIFICADORES DE ACCESO
+
+- Existen 4 niveles de acceso, pero solo 3 modificadores.
+- Niveles de acceso: public, protected, private y default (o package).
+- Modificadores: public, protected, private.
+- Para una clase, solo default y public tienen sentido.
+
+DEFAULT (O PACKAGE):
+- No se escribe el modificador.
+-Una clase con nivel de acceso default solo puede ser vista por otras clases en el mismo package.
+- Si as clases A y B estan en diferentes packages, y A tiene nivel de acceso "deault", V no podria crar una instancia de A.
+
+PUBLIC:
+- Una clase con el modificador "public" puede ser vista desde cualquier clase en cualquier package.
+
+NON-ACCES MODIFIERS
+- no interfieren con los modificadores de acceso.
+- final, abstract, strictfp.
+
+FINAL
+- Cuando se utiliza en una clase, se cancelan las capacidades hereditarias en dicha clase.
+- Ninguna otra clase puede extender de una clase "final".
+- De intentarlo, sera error de compilacion.
+Ejemplo: java.lang
+
+
+ABSTRACT:
+- Al usar este modificador sobre una clase, dicha clase no podra instranciarse.
+- Una clase abstracta solaente podra extenderse para especializarse.
+- Al utilizar abstract, marcamos una clase como incompleta, no se puede obtener algo tangible de ella aun.
+
+MIEMBROS DE CLASE
+- Los metodos y variables de instrancia (no locales) son considerados miembros de clase.
+- Tambien pueden aplicarse modificadores.
+
+
+CONSTRUCTORES:
+- En Java, los objetos son "construidos"
+- Siempre que se crea un objeto, al menos un constructor es invocado.
+- Cada clase Java tiene un constructor
+- aunque no lo declaremos explicitamente, el compilador creara uno por default
+- Son parecidos a un mentodo, debe tener el mismo nombre de la clase.
+- No tiene tipo de dato de retorno.
+- Pueden tener cualquer nivel de accedo
+- Pueden recibir argumentos
+-No pueden marcarse como static
+- Tampoco pueden marcarse
+
+INTERFACES EN JAVA:
+- Una interfaz en Java define un contrato de lo que debe hacer una clase.
+- Es una especia de clase en extremo abstracta, diseñada para ser implementada por otras clases.
+- todos los metodos que contenga una interfaz sera....
+- Una clase que implementa una interfaz debe implementar por fuerza todos los metodos que dicha interfaz contiene.
+- A diferencia de la herencia, una clase que implementa una interfaz no implica relacion jerarquica alguna.
+- Pueden implementare cualqui numero de interfaces a una clase.
+
+
+CONSIDERACIONES CON LAS INTERFACES:
+- Todos los metodos de una interfaz son implicitamente son publis y abstract
+- Todas las variables dentro de una interfaz deben ser public, static, y final, es decir constantes, no de instancia.
+- Siempre debe definirse usando la palabra eservada "interface".
+
+COMPOSICION VS HERENCIA
+-"You anted a banana, but what you got was a gorillaholding the banana and the entire jungle"
+- Herencia implica acoplamiento.
+- No user herencia solo por el hecho de reutilizar codigo
+
+ALTERNATIVAS A LA HERENCIA:
+- Interfaces
+-Delegates
+- Mixins/Traits (No en Java)
+- Interfaces Funcionales
+
+
+ENCAPSULAMIENTO:
+- Ocultamienot y proteccion de los datos
+- Write "shy" code
+- Protger contra lectura indeseada.
+
+QUE PODEMOS HACER?
+- Protege via modificador de acceso
+- Los atributos que sean private 
+
+OVERRIDING / OVERLOADING: Sobreescritura
+- Cuado se hace herencia de una clase, se tiiene la posibilidad para sobreescribir los metodos provenientes de la superclase.
+- Con esto, es posible definir comportamientos mas especificos acorde a la especializacion.
+- La lista de argmentos debe ser identica, de lo contrario sera sobrecarga.
+- Permite reutilizar un mismo metodo pero con diferente numero o tipo de parametros.
+- Debe cambiar la lista de argumentos
+- Los metodos sobrecargados pueden cambiar el tipo de dato de retorno
+- Pueden cambiar el nuivel de acceso
+- un mentodo puede sobrecargarse solamente dentro de la misma clase o en una subclase de esta.
+
+
+LITERALES STRING
+- Aunque String no es un tipo de dato primitivo, puede utilizarse como literal, sin necesidad de crear instancias.
+- String s = "Hola Mundo";
+- System.out.println("Hola" + "Mundo!");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
