@@ -1,0 +1,29 @@
+QUE ES MAVEN?
+
+- Herramienta de gestion y comprension de proyectos de software.
+- Basada en un concepto de Project Object Model (POM).
+- ciclos de vida.
+- Sirve para darle estructura al proyecto
+
+- Group ID: Empresa u organizacion que desarrolla el proyecto
+- Artifact ID: Nombre de la aplicacion.
+- DarchetypeAtifactId: 
+
+=======TEMPLATE PARA CREAR UN PROYECTO MAVEN==============
+
+mvn -B archetype:generate -DgroupId=com.codigofacilito.maven -DartifactId=app-prueba -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+
+
+QUE ES POM?
+
+Project Objetc Model
+- Es una representacion en XML del proyecto.
+
+
+COMANDOS PARA COMPILAR EN LA TERMINAL:
+
+-mvn compile: Compila el codigo y se genera la carpeta target
+-mvn test: Para correr los tests
+-mvn clean: Limpia el proyectom elimina la compilacion y borra la carpeta target.
+-mvn package: Empaqueta el proyecto en un .jar
+-mvn install: Instala en nuestro repositorio local el proyecto. 
