@@ -8,7 +8,7 @@ import org.apache.commons.collections4.*
  */
 
 
-public class App impeents Unmodifiable
+public class App impeents Unmodifiable;
 {
     public static void main( String[] args )
     {
