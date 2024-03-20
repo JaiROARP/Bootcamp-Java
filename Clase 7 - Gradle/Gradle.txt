@@ -1,0 +1,37 @@
+		QUE ES GRADLE?
+
+- Herramienta de contruccion generica.
+- Nos ayuda a construir proyectos de cualquier tamaño y complejidad.
+- Provee lenguaje (DSL - Domain Specific Language) para configurar y declarar logica de contruccion programmaticamente.
+- La herramienta mas utilizada para Java junto con Maven.
+- Puede construir proyectos en otros lenguajes.
+- Gradle es considerado "turing complete", lo que implica que se puede resolver cualquier problema computacional con esta herramienta.
+- Es una de las principales diferencias con Maven.
+- Los "build scripts" son efectivamete "programas" Groovy o Kotlin, y como tal cuentan con estructuras de control de flujo, loops, condiciones, etc...
+- Esto puede ser un arma de doble filo.
+
+		HERRAMIENTAS SIMILARES
+
+- Make
+- Ant
+- Maven
+- Bazen
+- Etc...
+
+		GRADLE CORE CONCEPTS
+
+- PROJECT
+  * Single Project - root project
+  * Multi-Project - root project + subprojects
+
+- BUILD SCRIPT
+  * Uno o varios scripts que detallan los pasos para construir un proyecto.
+
+- DEPENDENCY MANAGEMENT
+  * Capacidad de una build tool para decalrar y obtener recursos o bbliotecas externas a un proyecto
+  * Casi cualquier proyecto tiene dependencias externas, Gradle nos ayuda a administrarlas
+
+- TASK
+  * La unidad basica de trabajo en Gradle
+
+ - PLUGINS
