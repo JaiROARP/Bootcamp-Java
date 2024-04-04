@@ -1,0 +1,81 @@
+===============SERIALIZATION====================
+
+- Mecanismo que provee Java para convertir un Objeto y su estado a una secuencia de bytes, incluyendo la informacion que contiene.
+
+- DESERIALIZATION es el proceso inverso, en donde una secuencia de bytes es convertida de vuelta en un Objeto.
+
+PARA QUE SE USA?
+
+- Para transportar objetos de una JVM a otra.
+- EJEMPLOS DE USO:
+	- Hibernate, JPA, JMS, RMI, EJB, etc...
+
+VENTAJAS Y BENEFICIOS
+
+- Data Persistence.
+- Interoperability.
+- State sharing.
+
+DRAWBACKS
+
+- Performance overhead (CPU, memoria).
+- Security risks.
+- Compatibilidad de versiones entre clases.
+
+SERIALIZABLE INTERFACE
+
+- java.io.Serializable.
+- "Marker" Interface.
+- Habilita la posibilidad de que Java serialice objetos de esa clase.
+- Es necesario implementarla para hacer uso de Serializacion/Deserializacion.
+
+SERIALVERSIONUID
+
+- serialVersionUID.
+- Identificador unico para cada clase.
+- Sirve para que Java se asegure durante la deserializacion de que la clase corresponde al objeto a deserializar.
+- Tambien a verificar que sea la misma version de la clase.
+- Es opcional para nosotros definirlo, Java generara uno en runtime si no esta presente.
+
+COMO IMPLEMENTAR?
+
+- Para crear una clase serializable, solo se debe implementar la interfaz Serializable:
+- 
+-
+-
+
+TRANSIENT
+
+-En Java, existe la palabra reservada TRANSIENT.
+	- transient String name;
+- Sirve para indicar que una propiedad no debe ser serializada.
+- En su lugar, al momento de la deserializacion, las propiedades "transient" se setearan con valores por default, dependiendo del tipo de dato.
+
+PROCESO DE SERIALIZACION
+
+	java.io.InputStream
+		|
+		|
+		|
+	ObjectInputStream
+
+- ObjectInputStream puede leer un stream de bytes.
+- public final object readObject() throws IOException, ClassNotFoundException;
+
+
+PROCESO DE DESERIALIZACION
+
+	java.io.InputStream
+		|
+		|
+		|
+	ObjectOutputStream
+
+- ObjectOutputStream puede escribir variables primitivas y grafos de objetos hacia un stream de bytes
+- public final void writeObject(object o) throws IOException;
+
+CONSIDERACIONES
+
+- Si una clase implementa Serializable y contiene referencias a otras clases, las otras clases seran serializadas tambien.
+- Sin embargo, deben implementar Serializable tambien, de lo contrario, provocaran notSerializableException.
+		
